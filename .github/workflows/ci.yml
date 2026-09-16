@@ -1,4 +1,4 @@
-oname: Lesson 15 CI/CD
+name: Lesson 15 CI/CD
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run test
-        run: grep -q "this will fail" app.txt
+        run: grep -q "learning devops" app.txt
 
   deploy:
     needs: test
