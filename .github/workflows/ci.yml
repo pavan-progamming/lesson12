@@ -1,4 +1,4 @@
-name: Lesson 14 CI
+name: Lesson 15 CI/CD
 
 on:
   push:
@@ -15,3 +15,11 @@ jobs:
 
       - name: Run test
         run: grep -q "learning devops" app.txt
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy application
+        run: echo "Deploying application..."
